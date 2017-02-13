@@ -1,41 +1,46 @@
-def calculate():
-    operation = input('''
-Please type in the math operation you would like to complete:
-+ for addition
-- for subtraction
-* for multiplication
-/ for division
+def welcome():
+    print('''
+Python CLI Calculator
 ''')
 
-    number_1 = int(input('Please enter the first number: '))
-    number_2 = int(input('Please enter the second number: '))
+def calculate():
+    operation = input('''
+Type:
++ to add
+- to subtract
+* to multiply
+/ to divide
+''')
 
+    num_1 = int(input('Enter the first number: '))
+    num_2 = int(input('Enter the second number: '))
+
+# addition
     if operation == '+':
-        print('{} + {} = '.format(number_1, number_2))
-        print(number_1 + number_2)
+        print('{} + {} = '.format(num_1, num_2), num_1 + num_2)
 
+# subtraction
     elif operation == '-':
-        print('{} - {} = '.format(number_1, number_2))
-        print(number_1 - number_2)
+        print('{} - {} = '.format(num_1, num_2), num_1 - num_2)
 
+# multiplication
     elif operation == '*':
-        print('{} * {} = '.format(number_1, number_2))
-        print(number_1 * number_2)
+        print('{} * {} = '.format(num_1, num_2), num_1 * num_2)
 
+# division
     elif operation == '/':
-        print('{} / {} = '.format(number_1, number_2))
-        print(number_1 / number_2)
+        print('{} / {} = '.format(num_1, num_2), num_1 / num_2)
+
 
     else:
-        print('You have not typed a valid operator, please run the program again.')
+        print('That is not a valid operator.')
 
-    # Add again() function to calculate() function
     again()
 
 def again():
     calc_again = input('''
-Do you want to calculate again?
-Please type Y for YES or N for NO.
+Do you want to use the calculator again?
+Type Y for YES or N for NO.
 ''')
 
     if calc_again.upper() == 'Y':
@@ -45,4 +50,5 @@ Please type Y for YES or N for NO.
     else:
         again()
 
+welcome()
 calculate()
